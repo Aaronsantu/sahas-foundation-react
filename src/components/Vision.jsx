@@ -2,75 +2,75 @@ import { VISION } from '../data'
 import Reveal from './Reveal'
 
 export default function Vision() {
-  return (
-    <section className="navy" id="vision">
-      <div className="wrap">
-        <Reveal className="section-head">
-          <span className="eyebrow gold">Who we are</span>
-          <h2>Looking Forward to a Better Tomorrow</h2>
-          <p className="mission">
-            Making education available to underprivileged children, providing companionship to lonely elders, and offering healthcare and nutritional support to TB patients.
-          </p>
-        </Reveal>
+  return (
+    <section className="navy" id="vision">
+      <div className="wrap">
+        <Reveal className="section-head">
+          <span className="eyebrow gold">Who we are</span>
+          <h2>Looking Forward to a Better Tomorrow</h2>
+          <p className="mission">
+            Making education available to underprivileged children, providing companionship to lonely elders, and offering healthcare and nutritional support to TB patients.
+          </p>
+        </Reveal>
 
-        <Reveal as="blockquote" className="quote-block">
-          <p>&ldquo;If you want to find God, serve man. To reach Narayana you must serve the Daridra Narayanas &ndash; the starving millions of India&hellip;&rdquo;</p>
-          <cite>Swami Vivekananda</cite>
-        </Reveal>
+        <Reveal as="blockquote" className="quote-block">
+          <p>&ldquo;If you want to find God, serve man. To reach Narayana you must serve the Daridra Narayanas &ndash; the starving millions of India&hellip;&rdquo;</p>
+          <cite>Swami Vivekananda</cite>
+        </Reveal>
 
-        <Reveal className="prose-navy">
-          <p>
-            We at SAHAS, the SAHASIs, are doing our bit towards providing aid through necessary resources like education, care and support to the needy and underprivileged school kids; provide companionship to lonely elders as well as extend our hand to any specific need of the hour.
-          </p>
-          <p>
-            All those young at heart, with social consciousness, can contribute in whichever capacity they wish, by being associated with the SAHASIs. Our aim is to rouse the Indians to an awareness of their obligations and responsibilities to the nation and through the nation to humanity at large.
-          </p>
-        </Reveal>
+        <Reveal className="prose-navy">
+          <p>
+            We at SAHAS, the SAHASIs, are doing our bit towards providing aid through necessary resources like education, care and support to the needy and underprivileged school kids; provide companionship to lonely elders as well as extend our hand to any specific need of the hour.
+          </p>
+          <p>
+            All those young at heart, with social consciousness, can contribute in whichever capacity they wish, by being associated with the SAHASIs. Our aim is to rouse the Indians to an awareness of their obligations and responsibilities to the nation and through the nation to humanity at large.
+          </p>
+        </Reveal>
 
-        <div className="vision-list">
-          {VISION.map((v, i) => (
-            <Reveal key={v.label} delay={i * 0.1} className="row">
-              <span className="label">{v.label}</span>
-              <p>{v.text}</p>
-            </Reveal>
-          ))}
-        </div>
+        <div className="vision-list">
+          {VISION.map((v, i) => (
+            <Reveal key={v.label} delay={i * 0.1} className="row">
+              <span className="label">{v.label}</span>
+              <p>{v.text}</p>
+            </Reveal>
+          ))}
+        </div>
 
-        <Reveal className="take-part">
-          <div>
-            <span className="eyebrow gold">Membership</span>
-            <h3>Take Part</h3>
-            <p>
-              Any Resident or Non Resident Indian who accepts the constitution of SAHAS can enroll as a member, as a life member or yearly member.
-            </p>
-            <a href="#donate" className="btn btn-line-invert">
-              Know More
-            </a>
-          </div>
+        <Reveal className="take-part">
+          <div>
+            <span className="eyebrow gold">Membership</span>
+            <h3>Take Part</h3>
+            <p>
+              Any Resident or Non Resident Indian who accepts the constitution of SAHAS can enroll as a member, as a life member or yearly member.
+            </p>
+            <a href="#donate" className="btn btn-line-invert">
+              Know More
+            </a>
+          </div>
 
-          <div>
-            <span className="eyebrow gold">Volunteer</span>
-            <h3>Volunteer With Us</h3>
-            <p>
-              Lend your time and skills to SAHAS's ongoing projects, from food-packet distribution to tutoring and outreach.
-            </p>
-            <a href="#donate" className="btn btn-line-invert">
-              Sign up to volunteer
-            </a>
-          </div>
+          <div>
+            <span className="eyebrow gold">Volunteer</span>
+            <h3>Volunteer With Us</h3>
+            <p>
+              Lend your time and skills to SAHAS's ongoing projects, from food-packet distribution to tutoring and outreach.
+            </p>
+            <a href="#donate" className="btn btn-line-invert">
+              Sign up to volunteer
+            </a>
+          </div>
 
-          <div>
-            <span className="eyebrow gold">Partnership</span>
-            <h3>Partner With Us</h3>
-            <p>
-              Schools, clinics, corporates and other NGOs: if your work overlaps with ours, let's find where we can help each other.
-            </p>
-            <a href="#donate" className="btn btn-line-invert">
-              Discuss a partnership
-            </a>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  )
-}
+          <div>
+            <span className="eyebrow gold">Partnership</span>
+            <h3>Partner With Us</h3>
+            <p>
+              Schools, clinics, corporates and other NGOs: if your work overlaps with ours, let's find where we can help each other.
+            </p>
+            <a href="#donate" className="btn btn-line-invert">
+              Discuss a partnership
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  )
+} check this and add corrections

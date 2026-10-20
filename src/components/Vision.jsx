@@ -37,10 +37,38 @@ export default function Vision() {
         </div>
 
         <Reveal className="take-part">
-          <p>Any Resident or Non Resident Indian who accepts the constitution of SAHAS can enroll as a member of SAHAS, as a life member or yearly member.</p>
-          <a href="#donate" className="btn btn-line-invert">
-            Know More
-          </a>
+          <div>
+            <span className="eyebrow gold">Membership</span>
+            <h3>Take Part</h3>
+            <p>
+              Any Resident or Non Resident Indian who accepts the constitution of SAHAS can enroll as a member, as a life member or yearly member.
+            </p>
+            <a href="#donate" className="btn btn-line-invert">
+              Know More
+            </a>
+          </div>
+
+          <div>
+            <span className="eyebrow gold">Volunteer</span>
+            <h3>Volunteer With Us</h3>
+            <p>
+              Lend your time and skills to SAHAS's ongoing projects, from food-packet distribution to tutoring and outreach.
+            </p>
+            <a href="#donate" className="btn btn-line-invert">
+              Sign up to volunteer
+            </a>
+          </div>
+
+          <div>
+            <span className="eyebrow gold">Partnership</span>
+            <h3>Partner With Us</h3>
+            <p>
+              Schools, clinics, corporates and other NGOs: if your work overlaps with ours, let's find where we can help each other.
+            </p>
+            <a href="#donate" className="btn btn-line-invert">
+              Discuss a partnership
+            </a>
+          </div>
         </Reveal>
       </div>
     </section>

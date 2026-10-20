@@ -12,18 +12,17 @@ function CopyRow({ href, text, label }) {
     }
   }
   return (
-    <p className="copy-inline">
-      <a href={href}>{text}</a>{' '}
+    <div className="footer-contact-row">
+      <a href={href}>{text}</a>
       <button
         type="button"
         onClick={onCopy}
         aria-label={label}
-        className={'copy-btn' + (copied ? ' copied' : '')}
-        style={{ margin: 0, padding: '2px 6px', display: 'inline-flex' }}
+        className={'copy-icon-btn' + (copied ? ' copied' : '')}
       >
         <Icon name={copied ? 'check' : 'copy'} size={14} strokeWidth={2} />
       </button>
-    </p>
+    </div>
   )
 }
 

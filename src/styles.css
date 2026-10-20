@@ -453,6 +453,75 @@ footer.site-footer, footer.site {
   margin-bottom: 6px;
 }
 
+/* ---------- footer contact row & copy button fixes ---------- */
+.footer-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  white-space: nowrap;
+}
+
+.footer-contact-row a {
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.copy-icon-btn {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 4px 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.copy-icon-btn:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 540px) {
+  .footer-grid, .footer-cols {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.footer-col h3, .footer-col h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.footer-col p, .footer-col address {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
 .footer-col button.copy-btn, .footer-col .copy-inline {
   display: inline-flex;
   align-items: center;

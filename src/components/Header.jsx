@@ -42,6 +42,23 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Mobile navigation handler with fallback search for section elements
+  const handleNavClick = (id) => {
+    setOpen(false) // Close the mobile drawer
+
+    // Allow Framer Motion drawer exit animation to clear
+    setTimeout(() => {
+      const el = document.getElementById(id)
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      } else {
+        // Fallback: search by href or class if section ID is slightly different
+        const altEl = document.querySelector(`section#${id}, [data-section="${id}"]`)
+        if (altEl) altEl.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 150)
+  }
+
   return (
     <header className={'site' + (scrolled ? ' scrolled' : '')}>
       <motion.div className="progress" style={{ scaleX }} />
@@ -57,7 +74,12 @@ export default function Header() {
             Donate
           </a>
         </nav>
-        <button className="menu-toggle" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen((o) => !o)}>
+        <button
+          className="menu-toggle"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          onClick={() => setOpen((o) => !o)}
+        >
           <Icon name={open ? 'close' : 'menu'} size={24} strokeWidth={2} />
         </button>
       </div>
@@ -73,19 +95,25 @@ export default function Header() {
           >
             <div className="mobile-nav-inner">
               {NAV.map((n) => (
-                <a 
-                  key={n.id} 
-                  href={'#' + n.id} 
-                  onClick={() => setOpen(false)} 
+                <a
+                  key={n.id}
+                  href={'#' + n.id}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleNavClick(n.id)
+                  }}
                   className={active === n.id ? 'active' : ''}
                 >
                   {n.label}
                 </a>
               ))}
-              <a 
-                href="#donate" 
-                className="btn btn-primary" 
-                onClick={() => setOpen(false)}
+              <a
+                href="#donate"
+                className="btn btn-primary"
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleNavClick('donate')
+                }}
               >
                 Donate
               </a>

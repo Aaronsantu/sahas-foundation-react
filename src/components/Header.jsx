@@ -42,21 +42,19 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Mobile navigation handler with fallback search for section elements
-  const handleNavClick = (id) => {
-    setOpen(false) // Close the mobile drawer
+  const handleMobileClick = (e, id) => {
+    e.preventDefault()
+    setOpen(false)
 
-    // Allow Framer Motion drawer exit animation to clear
-    setTimeout(() => {
-      const el = document.getElementById(id)
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    // Using requestAnimationFrame guarantees execution right after React closes the menu
+    requestAnimationFrame(() => {
+      const target = document.getElementById(id)
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' })
       } else {
-        // Fallback: search by href or class if section ID is slightly different
-        const altEl = document.querySelector(`section#${id}, [data-section="${id}"]`)
-        if (altEl) altEl.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        window.location.hash = id
       }
-    }, 150)
+    })
   }
 
   return (
@@ -91,17 +89,14 @@ export default function Header() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
           >
             <div className="mobile-nav-inner">
               {NAV.map((n) => (
                 <a
                   key={n.id}
                   href={'#' + n.id}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    handleNavClick(n.id)
-                  }}
+                  onClick={(e) => handleMobileClick(e, n.id)}
                   className={active === n.id ? 'active' : ''}
                 >
                   {n.label}
@@ -110,10 +105,7 @@ export default function Header() {
               <a
                 href="#donate"
                 className="btn btn-primary"
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleNavClick('donate')
-                }}
+                onClick={(e) => handleMobileClick(e, 'donate')}
               >
                 Donate
               </a>

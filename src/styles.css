@@ -500,3 +500,33 @@ footer.site-footer, footer.site {
   font-size: 13px;
   color: var(--ink-soft);
 }
+/* ---------- take part grid fix ---------- */
+.take-part-grid {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--navy-line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.take-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.take-card p {
+  color: var(--cream-on-navy-soft);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width: 860px) {
+  .take-part-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

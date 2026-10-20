@@ -36,7 +36,6 @@ export default function Vision() {
           ))}
         </div>
 
-        {/* Standard div wrapper guarantees the CSS grid applies directly */}
         <div className="take-part-grid">
           <div className="take-card">
             <span className="eyebrow gold">Membership</span>

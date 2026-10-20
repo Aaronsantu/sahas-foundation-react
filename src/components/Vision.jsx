@@ -36,8 +36,9 @@ export default function Vision() {
           ))}
         </div>
 
-        <Reveal className="take-part">
-          <div>
+        {/* Standard div wrapper guarantees the CSS grid applies directly */}
+        <div className="take-part-grid">
+          <div className="take-card">
             <span className="eyebrow gold">Membership</span>
             <h3>Take Part</h3>
             <p>
@@ -48,7 +49,7 @@ export default function Vision() {
             </a>
           </div>
 
-          <div>
+          <div className="take-card">
             <span className="eyebrow gold">Volunteer</span>
             <h3>Volunteer With Us</h3>
             <p>
@@ -59,7 +60,7 @@ export default function Vision() {
             </a>
           </div>
 
-          <div>
+          <div className="take-card">
             <span className="eyebrow gold">Partnership</span>
             <h3>Partner With Us</h3>
             <p>
@@ -69,7 +70,7 @@ export default function Vision() {
               Discuss a partnership
             </a>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   )

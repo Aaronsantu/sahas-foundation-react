@@ -42,16 +42,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Smooth scroll handler for mobile menu items
-  const handleNavClick = (e, targetId) => {
-    e.preventDefault()
-    setOpen(false)
-    const element = document.getElementById(targetId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
   return (
     <header className={'site' + (scrolled ? ' scrolled' : '')}>
       <motion.div className="progress" style={{ scaleX }} />
@@ -86,7 +76,7 @@ export default function Header() {
                 <a 
                   key={n.id} 
                   href={'#' + n.id} 
-                  onClick={(e) => handleNavClick(e, n.id)} 
+                  onClick={() => setOpen(false)} 
                   className={active === n.id ? 'active' : ''}
                 >
                   {n.label}
@@ -95,7 +85,7 @@ export default function Header() {
               <a 
                 href="#donate" 
                 className="btn btn-primary" 
-                onClick={(e) => handleNavClick(e, 'donate')}
+                onClick={() => setOpen(false)}
               >
                 Donate
               </a>

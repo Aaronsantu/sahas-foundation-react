@@ -5,8 +5,8 @@ export const NAV = [
   { label: 'About', id: 'about' },
   { label: 'Team', id: 'team' },
   { label: 'Projects', id: 'projects' },
-  { label: 'Blogs', id: 'blogs' },    // Updated to 'blogs' to match <section id="blogs">
-  { label: 'Contact', id: 'contact' }, // Updated to 'contact' to match <section id="contact">
+  { label: 'Blogs', id: 'blogs' },
+  { label: 'Contact', id: 'donate' },
 ]
 
 export const MARQUEE = ['Education', 'Care', 'Companionship', 'Health', 'Nutrition', 'Smiles']
